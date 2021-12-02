@@ -11,33 +11,43 @@
 </head>
 <body>
 	<div class="site">
-		<header class="site__header">
-
+		<nav id="navbar" class="navbar navbar-light navbar-light navbar-expand-lg fixed-top">
 			<div class="container">
-				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-					<a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-						<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+				<div class="d-flex flex-wrap align-items-center justify-content-between w-100">
+					<a class="navbar-brand col-6 col-lg-2" href="/">
+						<img src="./assets/img/Zijem_vedu_logo.png" alt="">
 					</a>
-			
-					<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-						<li><a href="#" class="nav-link px-2 link-secondary">Platforma</a></li>
-						<li><a href="#" class="nav-link px-2 link-dark">Blog</a></li>
-						<li><a href="#" class="nav-link px-2 link-dark">Podujatia</a></li>
-						<li><a href="#" class="nav-link px-2 link-dark">O nás</a></li>
-					</ul>
-			
-					<div class="col-md-3 text-end">
-						<ul class="social__list social__list--header">
+
+					<div class="cols-auto offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+						<div class="offcanvas-header">
+							<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+						</div>
+						<div class="offcanvas-body">
+							<ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+								<li class="active"><a href="./platforma.html" class="nav-link">Platforma</a></li>
+								<li><a href="./blog.html" class="nav-link">Blog</a></li>
+								<li><a href="./podujatia.html" class="nav-link">Podujatia</a></li>
+								<li><a href="./o-nas.html" class="nav-link">O nás</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-lg-2 d-none d-lg-block text-end">
+						<ul class="social__list social__list--header social__list--light">
 							<li><a href="http://"><i class="fab  fa-2x fa-twitter"></i></a></li>
 							<li><a href="http://"><i class="fab  fa-2x fa-instagram"></i></a></li>
 							<li><a href="http://"><i class="fab  fa-2x fa-linkedin"></i></a></li>
 							<li><a href="http://"><i class="fab  fa-2x fa-facebook"></i></a></li>
 						</ul>
 					</div>
+
+					<button class="navbar-toggler ml-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
 				</div>
 			</div>
-
-		</header>
+		</nav>
 
 		<main class="site__main">
 
@@ -125,11 +135,11 @@
 						<div class="row py-5">
 							<div class="col-xl-6 offset-xl-3">
 								<p class="text-uppercase text-center fw-bolder">PS: Už nás sledujete?</p>
-								<ul class="social__list social__list--center social__list--light py-2">
-									<li class="mx-3"><a href="http://"><i class="fab fa-4x fa-twitter"></i></a></li>
-									<li class="mx-3"><a href="http://"><i class="fab fa-4x fa-instagram"></i></a></li>
-									<li class="mx-3"><a href="http://"><i class="fab fa-4x fa-linkedin"></i></a></li>
-									<li class="mx-3"><a href="http://"><i class="fab fa-4x fa-facebook"></i></a></li>
+								<ul class="social__list social__list--center social__list--light py-2 social__list--main">
+									<li class="mx-3"><a href="http://"><i class="fab fa-twitter"></i></a></li>
+									<li class="mx-3"><a href="http://"><i class="fab fa-instagram"></i></a></li>
+									<li class="mx-3"><a href="http://"><i class="fab fa-linkedin"></i></a></li>
+									<li class="mx-3"><a href="http://"><i class="fab fa-facebook"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -143,10 +153,10 @@
 								<p class="p-0 fs-8 text-uppercase text-center text-muted">Podporili nás</p>
 							</div>
 						</div>
-						<div class="row py-3">
+						<div class="row py-3 align-items-center justify-content-center">
 							<div class="partner">
 								<a href="http://">
-									<img src="./assets/img/partners/nadacia-eset.svg" alt="Nadacia ESET">
+									<img src="./assets/img/partners/solved.png" alt="Solved">
 								</a>
 							</div>
 							<div class="partner">
@@ -156,7 +166,22 @@
 							</div>
 							<div class="partner">
 								<a href="http://">
-									<img src="./assets/img/partners/nadacia-eset.svg" alt="Nadacia ESET">
+									<img src="./assets/img/partners/eph.svg" alt="Nadacia EPH">
+								</a>
+							</div>
+							<div class="partner">
+								<a href="http://">
+									<img src="./assets/img/partners/slido.svg" alt="Slido">
+								</a>
+							</div>
+							<div class="partner">
+								<a href="http://">
+									<img src="./assets/img/partners/bts.png" alt="BTS">
+								</a>
+							</div>
+							<div class="partner">
+								<a href="http://">
+									<img src="./assets/img/partners/websupport.svg" alt="websupport">
 								</a>
 							</div>
 						</div>
@@ -208,6 +233,8 @@
 
 	<script src="./assets/js/jquery.min.js"></script>
 	<script src="./assets/js/vendors/bootstrap/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
 	<script src="./assets/js/main.js"></script>
 </body>
 </html>

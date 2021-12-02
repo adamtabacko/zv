@@ -57,6 +57,10 @@ a:hover {
 	color: #660bfa;
 }
 
+u {
+	text-decoration-color: rgba(255, 0, 215, 0.6);
+}
+
 .color-gold {
 	color: #D7A86D;
 }
@@ -545,14 +549,32 @@ h6 {
 }
 
 .pagination .page-item .page-link {
+	width: 40px;
+	height: 40px;
 	font-weight: bold;
-	background: none;
-	border: 1px solid;
-	border-image-slice: 1;
-	border-width: 1px;
-	border-radius: 4px;
-	border-image-source: linear-gradient(90deg, #ff00d7 0%, #d7a86d 100%) !important;
+	border: 1px;
+	border: 1px solid transparent;
+	/* !importanté */
+	border-radius: 40px;
+	background-color: white;
+	background-clip: padding-box;
+	/* !importanté */
 	color: #5104CE;
+}
+
+.pagination .page-item .page-link:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: -1px;
+	/* !importanté */
+	border-radius: inherit;
+	/* !importanté */
+	background: linear-gradient(90deg, #ff00d7 0%, #d7a86d 100%);
+	z-index: -1;
 }
 
 .pagination .page-item.active .page-link {
@@ -647,6 +669,22 @@ h6 {
 	background: linear-gradient(90deg, white 0%, #d7a86d 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+.social__list.social__list--main i {
+	font-size: 32px;
+}
+
+@media (min-width: 768px) {
+	.social__list.social__list--main i {
+		font-size: 40px;
+	}
+}
+
+@media (min-width: 998px) {
+	.social__list.social__list--main i {
+		font-size: 48px;
+	}
 }
 
 .social__list li:not(first-oftype) {
@@ -1229,6 +1267,7 @@ h6 {
 	font-weight: 700 !important;
 	font-size: 14px !important;
 	text-transform: uppercase;
+	transition: transform .3s;
 }
 
 .btn.btn-md {
@@ -1249,11 +1288,24 @@ h6 {
 	align-items: flex-start;
 }
 
+.btn.btn-double i {
+	margin-left: .5rem;
+}
+
+.btn:hover {
+	box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+	transform: translateY(-4px);
+}
+
 .btn-gradient {
 	color: #FFFFFF;
 	border: none !important;
 	background: #ff00d7 !important;
 	background: linear-gradient(90deg, #ff00d7 0%, #d7a86d 100%) !important;
+}
+
+.btn-gradient:hover {
+	color: #FFFFFF;
 }
 
 .btn-gradient-outline {
@@ -1286,7 +1338,8 @@ h6 {
 }
 
 .btn-gradient-outline:hover {
-	color: #5104CE;
+	color: white;
+	background: linear-gradient(90deg, #ff00d7 0%, #d7a86d 100%);
 }
 
 .btn-gradient-outline i {
