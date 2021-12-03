@@ -555,11 +555,12 @@ h6 {
 	border: 1px;
 	border: 1px solid transparent;
 	/* !importanté */
-	border-radius: 40px;
+	border-radius: 5px;
 	background-color: white;
 	background-clip: padding-box;
 	/* !importanté */
 	color: #5104CE;
+	transition: all .3s;
 }
 
 .pagination .page-item .page-link:before {
@@ -575,6 +576,10 @@ h6 {
 	/* !importanté */
 	background: linear-gradient(90deg, #ff00d7 0%, #d7a86d 100%);
 	z-index: -1;
+}
+
+.pagination .page-item .page-link:hover {
+	color: white;
 }
 
 .pagination .page-item.active .page-link {
@@ -1060,6 +1065,16 @@ h6 {
 	border-radius: 20px;
 }
 
+.timeline .timeline__box .timeline__image {
+	width: 100%;
+}
+
+.timeline .timeline__box .timeline__image img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 6px;
+}
+
 .timeline .timeline__box h4 {
 	color: #27013D;
 }
@@ -1119,6 +1134,10 @@ h6 {
 	border-radius: 12px;
 	background: linear-gradient(90deg, #ff00d7 0%, #d7a86d 100%);
 	z-index: 1;
+}
+
+.timeline .row:last-of-type .timeline__year::after {
+	display: none;
 }
 
 .app__header {
